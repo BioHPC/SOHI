@@ -46,6 +46,9 @@ cd SOHI
 # Create the environment
 conda env create -f workflow/envs/sohi_core.yaml
 conda activate sohi_core
+```
+
+---
 
 ## Usage Example
 
@@ -59,8 +62,6 @@ python context_harmonizer/harmonize.py \
   --schema context_harmonizer/schema.json \
   --output clean_metadata.csv
 ```
-
----
 
 ### 2. Run the Modeling Engine
 
@@ -83,5 +84,5 @@ taehyuk.ahn@slu.edu
 
 Dr. Laibin Huang  
 Department of Biology  
-Saint Louis University
+Saint Louis University  
 laibin.huang@slu.edu
