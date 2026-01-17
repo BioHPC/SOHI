@@ -1,0 +1,31 @@
+name: sohi_core
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Core Workflow Management
+  - python=3.9
+  - snakemake>=7.0
+  
+  # Bioinformatics Tools (Objective 1)
+  - megahit         # Assembly
+  - metabat2        # Binning
+  - maxbin2         # Binning
+  - concoct         # Binning
+  - das_tool        # Binning Refinement
+  - gtdbtk          # Taxonomy
+  - prodigal        # Gene Prediction
+  
+  # Data Science & Modeling (Objective 2)
+  - pandas
+  - numpy
+  - scikit-learn
+  - xgboost
+  - shap            # Explainable AI
+  - networkx        # For microbial networks
+  
+  # Utilities
+  - jsonschema      # For Context Harmonizer validation
+  - matplotlib
+  - seaborn

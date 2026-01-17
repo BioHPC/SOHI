@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SOHI Soil Metadata Standard v1.0",
+  "description": "Standardized schema for agricultural soil metagenome metadata harmonizing pH, texture, and nutrient pools.",
+  "type": "object",
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "description": "Unique identifier for the biological sample."
+    },
+    "ph_h2o": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 14,
+      "description": "Soil pH measured in water (1:1 or 1:2.5)."
+    },
+    "soc_percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Soil Organic Carbon expressed as a percentage."
+    },
+    "pmn_mg_kg": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Potentially Mineralizable Nitrogen (anaerobic incubation) in mg/kg."
+    },
+    "texture_class": {
+      "type": "string",
+      "enum":,
+      "description": "USDA Soil Texture Classification."
+    },
+    "collection_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of sampling (YYYY-MM-DD)."
+    }
+  },
+  "required": ["sample_id", "ph_h2o", "soc_percent"]
+}
