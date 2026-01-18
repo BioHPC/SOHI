@@ -1,0 +1,5 @@
+ID,Date,pH_Water,SOC_Percent,PMN,Texture,Notes
+Sample_001,2024-05-12,6.5,2.1,45.2,Silt Loam,Morrow Plot Rep 1
+Sample_002,2024-05-12,5.8,1.8,30.5,Clay,Morrow Plot Rep 2
+Sample_003,2024-06-01,7.0,3.5,60.1,Loam,External Site A
+Sample_004,2024-06-01,NaN,1.2,NaN,Sand,Excluded (Missing Data)
