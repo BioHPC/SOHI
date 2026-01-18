@@ -1,0 +1,51 @@
+# SOHI Bioinformatics Core Workflow v0.1
+# Handles Quality Control, Assembly, and Binning
+
+configfile: "workflow/envs/sohi_core.yaml"
+
+# Define target outputs
+rule all:
+    input:
+        "results/assembly/final.contigs.fa",
+        "results/binning/metabat2/bins_summary.txt"
+
+# Task 1.2: Co-Assembly Strategy
+rule megahit_assembly:
+    input:
+        r1 = "data/raw/{sample}_R1.fastq.gz",
+        r2 = "data/raw/{sample}_R2.fastq.gz"
+    output:
+        "results/assembly/final.contigs.fa"
+    threads: 16
+    conda:
+        "envs/sohi_core.yaml"
+    shell:
+        """
+        megahit -1 {input.r1} -2 {input.r2} -o results/assembly/temp --out-prefix final
+        mv results/assembly/temp/final.contigs.fa {output}
+        rm -rf results/assembly/temp
+        """
+
+# Task 1.2: High-Fidelity Binning (MetaBAT2)
+rule metabat_binning:
+    input:
+        contigs = "results/assembly/final.contigs.fa",
+        reads_1 = "data/raw/{sample}_R1.fastq.gz",
+        reads_2 = "data/raw/{sample}_R2.fastq.gz"
+    output:
+        summary = "results/binning/metabat2/bins_summary.txt"
+    params:
+        min_contig_len = 2000 # As per proposal Task 1.2
+    conda:
+        "envs/sohi_core.yaml"
+    shell:
+        """
+        # Mapping step (simplified for prototype)
+        bowtie2-build {input.contigs} results/assembly/index
+        bowtie2 -x results/assembly/index -1 {input.reads_1} -2 {input.reads_2} | \
+        samtools sort -o results/assembly/mapped.bam
+        
+        # Binning step
+        runMetaBat.sh -m {params.min_contig_len} results/assembly/final.contigs.fa results/assembly/mapped.bam
+        touch {output} # Placeholder for successful run
+        """
