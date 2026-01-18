@@ -1,0 +1,20 @@
+Category	Process	Gene_Symbol	KO_ID	EC_Number	Description
+C_cycling	C_fixation	PRK	K00855	2.7.1.19	Phosphoribulokinase
+C_cycling	C_fixation	rbcL	K01601	4.1.1.39	RuBisCO large subunit
+C_cycling	Organic_C_degradation	chiA	K13381	3.2.1.14	Chitinase
+C_cycling	Organic_C_degradation	CELB	K19357	3.2.1.4	Cellulase
+C_cycling	Organic_C_degradation	malZ	K01187	3.2.1.20	Alpha-glucosidase
+C_cycling	Organic_C_degradation	lacZ	K01190	3.2.1.23	Beta-galactosidase
+N_cycling	N_mineralization	amiE	K01426	3.5.1.4	Amidase
+N_cycling	N_mineralization	nagZ	K01207	3.2.1.30	Beta-hexosaminidase
+N_cycling	N_mineralization	gdhA	K00262	1.4.1.4	Glutamate dehydrogenase
+N_cycling	N_mineralization	ureC	K01428	3.5.1.5	Urease subunit alpha
+N_cycling	N_fixation	nifH	K02588	1.18.6.1	Nitrogenase iron protein
+N_cycling	Nitrification	amoA	K10944	1.14.99.39	Ammonia monooxygenase subunit A
+N_cycling	Denitrification	nirK	K00368	1.7.2.1	Nitrite reductase (NO-forming)
+N_cycling	Denitrification	nirS	K15864	1.7.2.1	Nitrite reductase (NO-forming)
+N_cycling	Denitrification	nosZ	K00376	1.7.2.4	Nitrous-oxide reductase
+P_cycling	Phosphoester_hydrolysis	phoA	K01077	3.1.3.1	Alkaline phosphatase
+P_cycling	Phosphoester_hydrolysis	phoD	K01113	3.1.3.1	Alkaline phosphatase D
+P_cycling	Inorganic_P_biosynthesis	ppk1	K00937	2.7.4.1	Polyphosphate kinase
+S_cycling	Sulfur_mineralization	aslA	K01134	3.1.6.8	Arylsulfatase A
